@@ -1,10 +1,9 @@
 package com.bpc.app
 
-import android.os.Bundle
 import android.graphics.Color
 import android.graphics.Typeface
+import android.os.Bundle
 import android.view.Gravity
-import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -12,10 +11,10 @@ import androidx.appcompat.app.AppCompatActivity
 class MainActivity : AppCompatActivity() {
 
     private val purple = Color.rgb(108, 77, 255)
-    private val background = Color.rgb(248, 247, 252)
+    private val backgroundColor = Color.rgb(248, 247, 252)
     private val textColor = Color.rgb(23, 21, 31)
     private val secondaryText = Color.rgb(111, 107, 122)
-    private val white = Color.WHITE
+    private val whiteColor = Color.WHITE
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         val root = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
             gravity = Gravity.CENTER
-            setBackgroundColor(background)
+            setBackgroundColor(backgroundColor)
             setPadding(40, 40, 40, 40)
         }
 
@@ -67,12 +66,12 @@ class MainActivity : AppCompatActivity() {
         val getStarted = createButton(
             text = "Get Started",
             backgroundColor = purple,
-            textColor = white
+            textColor = whiteColor
         )
 
         val login = createButton(
             text = "Log In",
-            backgroundColor = white,
+            backgroundColor = whiteColor,
             textColor = purple
         )
 
@@ -140,7 +139,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showCreateAccountScreen() {
-        // Account screen will be added in the next stage.
         showMessageScreen(
             "Create your BPC account",
             "Your account system is coming next."
@@ -148,7 +146,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showLoginScreen() {
-        // Login screen will be added in the next stage.
         showMessageScreen(
             "Welcome back",
             "The BPC login system is coming next."
@@ -163,7 +160,7 @@ class MainActivity : AppCompatActivity() {
         val root = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
             gravity = Gravity.CENTER
-            setBackgroundColor(background)
+            setBackgroundColor(backgroundColor)
             setPadding(40, 40, 40, 40)
         }
 
@@ -186,14 +183,20 @@ class MainActivity : AppCompatActivity() {
         val back = createButton(
             text = "Back",
             backgroundColor = purple,
-            textColor = white
+            textColor = whiteColor
         )
 
         back.setOnClickListener {
             showWelcomeScreen()
         }
 
-        root.addView(title)
+        root.addView(
+            title,
+            LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            )
+        )
 
         root.addView(
             message,
