@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bpc_primary">#6C4DFF</color>
+    <color name="bpc_primary_dark">#5136D6</color>
+    <color name="bpc_background">#F8F7FC</color>
+    <color name="bpc_surface">#FFFFFF</color>
+    <color name="bpc_text">#17151F</color>
+    <color name="bpc_text_secondary">#6F6B7A</color>
+    <color name="bpc_border">#E8E5EF</color>
+    <color name="bpc_success">#22A06B</color>
+</resources>
